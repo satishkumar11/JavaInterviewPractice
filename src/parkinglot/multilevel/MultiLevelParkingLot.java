@@ -15,14 +15,17 @@ import java.util.UUID;
 // share package-private classes across packages.
 // https://www.hellointerview.com/learn/low-level-design/problem-breakdowns/parking-lot
 
+// The kind of vehicle being parked.
 enum VehicleType {
     MOTORCYCLE, CAR, LARGE
 }
 
+// The kind of spot a vehicle can park in.
 enum SpotType {
     MOTORCYCLE, CAR, LARGE
 }
 
+// A single physical parking space.
 class ParkingSpot {
     private final String id;
     private final SpotType spotType;
@@ -41,6 +44,7 @@ class ParkingSpot {
     }
 }
 
+// A record of one active parking session.
 class Ticket {
     private final String id;
     private final String spotId; // includes the floor implicitly, e.g. "2-C1"
@@ -114,6 +118,7 @@ class ParkingFloor {
     }
 }
 
+// Orchestrator: owns all floors and active tickets; the entry/exit API.
 public class MultiLevelParkingLot {
 
     private final List<ParkingFloor> floors;
@@ -170,9 +175,12 @@ public class MultiLevelParkingLot {
     }
 
     private SpotType mapVehicleTypeToSpotType(VehicleType vehicleType) {
-        if (vehicleType == VehicleType.MOTORCYCLE) return SpotType.MOTORCYCLE;
-        if (vehicleType == VehicleType.CAR) return SpotType.CAR;
-        if (vehicleType == VehicleType.LARGE) return SpotType.LARGE;
+        if (vehicleType == VehicleType.MOTORCYCLE)
+            return SpotType.MOTORCYCLE;
+        if (vehicleType == VehicleType.CAR)
+            return SpotType.CAR;
+        if (vehicleType == VehicleType.LARGE)
+            return SpotType.LARGE;
         throw new RuntimeException("Unknown vehicle type");
     }
 

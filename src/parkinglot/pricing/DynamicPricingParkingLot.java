@@ -12,28 +12,23 @@ import java.util.UUID;
 // the concrete strategies are reused from DynamicPricingDemo.java (same
 // package, so no import needed).
 
+// The kind of spot a vehicle can park in.
 enum SpotType {
     MOTORCYCLE, CAR, LARGE
 }
 
+// A single physical parking space.
 class ParkingSpot {
     private final String id;
     private final SpotType spotType;
 
-    public ParkingSpot(String id, SpotType spotType) {
-        this.id = id;
-        this.spotType = spotType;
-    }
+    public ParkingSpot(String id, SpotType spotType) { this.id = id; this.spotType = spotType; }
 
-    public String getId() {
-        return id;
-    }
-
-    public SpotType getSpotType() {
-        return spotType;
-    }
+    public String getId() { return id; }
+    public SpotType getSpotType() { return spotType; }
 }
 
+// A record of one active parking session.
 class Ticket {
     private final String id;
     private final String spotId;
@@ -47,23 +42,13 @@ class Ticket {
         this.entryTime = entryTime;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public String getSpotId() {
-        return spotId;
-    }
-
-    public VehicleType getVehicleType() {
-        return vehicleType;
-    }
-
-    public long getEntryTime() {
-        return entryTime;
-    }
+    public String getId() { return id; }
+    public String getSpotId() { return spotId; }
+    public VehicleType getVehicleType() { return vehicleType; }
+    public long getEntryTime() { return entryTime; }
 }
 
+// Orchestrator: owns spots and active tickets; delegates fee calculation to a PricingStrategy.
 public class DynamicPricingParkingLot {
 
     private final List<ParkingSpot> spots;

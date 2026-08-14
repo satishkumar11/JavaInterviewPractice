@@ -43,18 +43,10 @@ class ParkingSpot {
     private final String id;
     private final SpotType spotType;
 
-    public ParkingSpot(String id, SpotType spotType) {
-        this.id = id;
-        this.spotType = spotType;
-    }
+    public ParkingSpot(String id, SpotType spotType) { this.id = id; this.spotType = spotType; }
 
-    public String getId() {
-        return id;
-    }
-
-    public SpotType getSpotType() {
-        return spotType;
-    }
+    public String getId() { return id; }
+    public SpotType getSpotType() { return spotType; }
 }
 
 // Immutable record of a parking session — created at entry, read-only after
@@ -83,21 +75,10 @@ class Ticket {
         this.entryTime = entryTime;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public String getSpotId() {
-        return spotId;
-    }
-
-    public VehicleType getVehicleType() {
-        return vehicleType;
-    }
-
-    public long getEntryTime() {
-        return entryTime;
-    }
+    public String getId() { return id; }
+    public String getSpotId() { return spotId; }
+    public VehicleType getVehicleType() { return vehicleType; }
+    public long getEntryTime() { return entryTime; }
 }
 
 // Note: no getAvailableSpots() or getParkingStatus() method here. It might feel

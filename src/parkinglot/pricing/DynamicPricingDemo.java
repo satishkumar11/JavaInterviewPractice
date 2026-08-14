@@ -6,6 +6,7 @@ import java.util.Map;
 // per-vehicle-type, surge) using the Strategy Pattern.
 // https://www.hellointerview.com/learn/low-level-design/problem-breakdowns/parking-lot
 
+// The kind of vehicle being parked.
 enum VehicleType {
     MOTORCYCLE, CAR, LARGE
 }
@@ -19,9 +20,7 @@ interface PricingStrategy {
 class HourlyPricing implements PricingStrategy {
     private final long hourlyRateCents;
 
-    public HourlyPricing(long hourlyRateCents) {
-        this.hourlyRateCents = hourlyRateCents;
-    }
+    public HourlyPricing(long hourlyRateCents) { this.hourlyRateCents = hourlyRateCents; }
 
     public long calculateFee(VehicleType vehicleType, long durationMillis) {
         return roundedUpHours(durationMillis) * hourlyRateCents;
@@ -41,9 +40,7 @@ class HourlyPricing implements PricingStrategy {
 class VehicleTypePricing implements PricingStrategy {
     private final Map<VehicleType, Long> hourlyRatesCents;
 
-    public VehicleTypePricing(Map<VehicleType, Long> hourlyRatesCents) {
-        this.hourlyRatesCents = hourlyRatesCents;
-    }
+    public VehicleTypePricing(Map<VehicleType, Long> hourlyRatesCents) { this.hourlyRatesCents = hourlyRatesCents; }
 
     public long calculateFee(VehicleType vehicleType, long durationMillis) {
         long rate = hourlyRatesCents.get(vehicleType);
@@ -56,10 +53,7 @@ class SurgePricing implements PricingStrategy {
     private final PricingStrategy basePricingStrategy;
     private final double surgeMultiplier;
 
-    public SurgePricing(PricingStrategy basePricingStrategy, double surgeMultiplier) {
-        this.basePricingStrategy = basePricingStrategy;
-        this.surgeMultiplier = surgeMultiplier;
-    }
+    public SurgePricing(PricingStrategy basePricingStrategy, double surgeMultiplier) { this.basePricingStrategy = basePricingStrategy; this.surgeMultiplier = surgeMultiplier; }
 
     public long calculateFee(VehicleType vehicleType, long durationMillis) {
         long baseFee = basePricingStrategy.calculateFee(vehicleType, durationMillis);
