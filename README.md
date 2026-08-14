@@ -13,6 +13,22 @@
 - [Dynamic Pricing — strategies](src/parkinglot/pricing/DynamicPricingDemo.java)
 - [Dynamic Pricing — full lot](src/parkinglot/pricing/DynamicPricingParkingLot.java)
 
+## Low-Level Design: BookMyShow
+- [Full implementation](src/bookmyshow/BookingSystem.java)
+- [Blueprint](src/bookmyshow/blueprint/BookingSystem.java)
+
+## Low-Level Design: Elevator System
+- [Full implementation](src/elevator/ElevatorController.java) — SCAN algorithm + hall call dispatch
+- [Blueprint](src/elevator/blueprint/ElevatorController.java)
+
+## Low-Level Design: Splitwise
+- [Full implementation](src/splitwise/SplitwiseService.java) — split strategies, balance ledger, debt simplification
+- [Blueprint](src/splitwise/blueprint/SplitwiseService.java)
+
+## Low-Level Design: Snake and Ladder
+- [Full implementation](src/snakeandladder/SnakeAndLadderGame.java)
+- [Blueprint](src/snakeandladder/blueprint/SnakeAndLadderGame.java)
+
 ## Practice Problems
 - [TwoSum](src/TwoSum.java)
 - [LongestUniqueSubString](src/LongestUniqueSubString.java)
