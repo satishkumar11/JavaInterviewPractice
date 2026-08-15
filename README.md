@@ -33,6 +33,10 @@
 - [Full implementation](src/ratelimiter/RateLimiter.java) — Factory + Strategy pattern, Token Bucket & Sliding Window Log
 - [Blueprint](src/ratelimiter/blueprint/RateLimiter.java)
 
+## Interview Prep Docs
+- [Mercans Interview — Master Answer Book](Mercans_Interview_Master_Answer_Book.pdf)
+- [Spring & Spring Cloud — Interview Q&A](spring-interview-qa.pdf)
+
 ## Practice Problems
 - [TwoSum](src/TwoSum.java)
 - [LongestUniqueSubString](src/LongestUniqueSubString.java)
