@@ -24,9 +24,17 @@ class RateLimitResult {
         this.retryAfterMs = retryAfterMs;
     }
 
-    public boolean isAllowed() { return allowed; }
-    public int getRemaining() { return remaining; }
-    public Long getRetryAfterMs() { return retryAfterMs; }
+    public boolean isAllowed() {
+        return allowed;
+    }
+
+    public int getRemaining() {
+        return remaining;
+    }
+
+    public Long getRetryAfterMs() {
+        return retryAfterMs;
+    }
 }
 
 // Strategy interface every rate limiting algorithm implements.
@@ -34,15 +42,20 @@ interface Limiter {
     RateLimitResult allow(String key);
 }
 
-// Per-client Token Bucket state: how many tokens remain, and when we last refilled.
+// Per-client Token Bucket state: how many tokens remain, and when we last
+// refilled.
 class TokenBucket {
     double tokens;
     long lastRefillTime;
 
-    TokenBucket(double initialTokens, long time) { this.tokens = initialTokens; this.lastRefillTime = time; }
+    TokenBucket(double initialTokens, long time) {
+        this.tokens = initialTokens;
+        this.lastRefillTime = time;
+    }
 }
 
-// Bursts allowed up to `capacity`, refilling continuously at `refillRatePerSecond`.
+// Bursts allowed up to `capacity`, refilling continuously at
+// `refillRatePerSecond`.
 class TokenBucketLimiter implements Limiter {
     private final int capacity;
     private final int refillRatePerSecond;
@@ -87,7 +100,9 @@ class TokenBucketLimiter implements Limiter {
 class RequestLog {
     Queue<Long> timestamps;
 
-    RequestLog(Queue<Long> queue) { this.timestamps = queue; }
+    RequestLog(Queue<Long> queue) {
+        this.timestamps = queue;
+    }
 }
 
 // Perfectly accurate but memory-heavy: tracks every request's exact timestamp
@@ -143,13 +158,11 @@ class LimiterFactory {
             case "TokenBucket":
                 return new TokenBucketLimiter(
                         ((Number) algoConfig.get("capacity")).intValue(),
-                        ((Number) algoConfig.get("refillRatePerSecond")).intValue()
-                );
+                        ((Number) algoConfig.get("refillRatePerSecond")).intValue());
             case "SlidingWindowLog":
                 return new SlidingWindowLogLimiter(
                         ((Number) algoConfig.get("maxRequests")).intValue(),
-                        ((Number) algoConfig.get("windowMs")).longValue()
-                );
+                        ((Number) algoConfig.get("windowMs")).longValue());
             default:
                 throw new IllegalArgumentException("Unknown algorithm: " + algorithm);
         }
@@ -212,13 +225,16 @@ public class RateLimiter {
         System.out.println("--- Token Bucket on /search (capacity=5, refill=5/s) ---");
         for (int i = 0; i < 7; i++) {
             RateLimitResult r = rateLimiter.allow("alice", "/search");
-            System.out.println("request " + i + ": allowed=" + r.isAllowed() + " remaining=" + r.getRemaining() + " retryAfterMs=" + r.getRetryAfterMs());
+            System.out.println("request " + i + ": allowed=" + r.isAllowed() + " remaining=" + r.getRemaining()
+                    + " retryAfterMs=" + r.getRetryAfterMs());
         }
         RateLimitResult denied = rateLimiter.allow("alice", "/search");
-        System.out.println("bucket drained: allowed=" + denied.isAllowed() + " retryAfterMs=" + denied.getRetryAfterMs());
+        System.out
+                .println("bucket drained: allowed=" + denied.isAllowed() + " retryAfterMs=" + denied.getRetryAfterMs());
         Thread.sleep(denied.getRetryAfterMs() + 20);
         RateLimitResult afterWait = rateLimiter.allow("alice", "/search");
-        System.out.println("after waiting: allowed=" + afterWait.isAllowed() + " remaining=" + afterWait.getRemaining());
+        System.out
+                .println("after waiting: allowed=" + afterWait.isAllowed() + " remaining=" + afterWait.getRemaining());
 
         System.out.println("\n--- Sliding Window Log on /upload (max=3, window=800ms) ---");
         for (int i = 0; i < 3; i++) {
@@ -226,7 +242,8 @@ public class RateLimiter {
             System.out.println("request " + i + ": allowed=" + r.isAllowed() + " remaining=" + r.getRemaining());
         }
         RateLimitResult uploadDenied = rateLimiter.allow("bob", "/upload");
-        System.out.println("4th immediate request: allowed=" + uploadDenied.isAllowed() + " retryAfterMs=" + uploadDenied.getRetryAfterMs());
+        System.out.println("4th immediate request: allowed=" + uploadDenied.isAllowed() + " retryAfterMs="
+                + uploadDenied.getRetryAfterMs());
         Thread.sleep(uploadDenied.getRetryAfterMs() + 20);
         RateLimitResult uploadAfterWait = rateLimiter.allow("bob", "/upload");
         System.out.println("after window slides: allowed=" + uploadAfterWait.isAllowed());
@@ -234,7 +251,8 @@ public class RateLimiter {
         System.out.println("\n--- Default limiter for unconfigured endpoint ---");
         System.out.println("call 1: " + rateLimiter.allow("carol", "/unknown").isAllowed());
         System.out.println("call 2: " + rateLimiter.allow("carol", "/unknown").isAllowed());
-        System.out.println("call 3 (should be denied, capacity=2): " + rateLimiter.allow("carol", "/unknown").isAllowed());
+        System.out.println(
+                "call 3 (should be denied, capacity=2): " + rateLimiter.allow("carol", "/unknown").isAllowed());
 
         System.out.println("\n--- Unknown algorithm rejection ---");
         try {
