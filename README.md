@@ -29,6 +29,10 @@
 - [Full implementation](src/snakeandladder/SnakeAndLadderGame.java)
 - [Blueprint](src/snakeandladder/blueprint/SnakeAndLadderGame.java)
 
+## Low-Level Design: Rate Limiter
+- [Full implementation](src/ratelimiter/RateLimiter.java) — Factory + Strategy pattern, Token Bucket & Sliding Window Log
+- [Blueprint](src/ratelimiter/blueprint/RateLimiter.java)
+
 ## Practice Problems
 - [TwoSum](src/TwoSum.java)
 - [LongestUniqueSubString](src/LongestUniqueSubString.java)
