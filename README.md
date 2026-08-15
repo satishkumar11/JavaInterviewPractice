@@ -13,13 +13,13 @@
 - [Dynamic Pricing — strategies](src/parkinglot/pricing/DynamicPricingDemo.java)
 - [Dynamic Pricing — full lot](src/parkinglot/pricing/DynamicPricingParkingLot.java)
 
-## Low-Level Design: ![BookMyShow](https://img.shields.io/badge/BookMyShow-FF6F00)
-- [Full implementation](src/bookmyshow/BookingSystem.java)
-- [Blueprint](src/bookmyshow/blueprint/BookingSystem.java)
-
 ## Low-Level Design: ![Elevator System](https://img.shields.io/badge/Elevator%20System-8A2BE2)
 - [Full implementation](src/elevator/ElevatorController.java) — SCAN algorithm + hall call dispatch
 - [Blueprint](src/elevator/blueprint/ElevatorController.java)
+
+## Low-Level Design: ![BookMyShow](https://img.shields.io/badge/BookMyShow-FF6F00)
+- [Full implementation](src/bookmyshow/BookingSystem.java)
+- [Blueprint](src/bookmyshow/blueprint/BookingSystem.java)
 
 ## Low-Level Design: ![Splitwise](https://img.shields.io/badge/Splitwise-2E8B57)
 - [Full implementation](src/splitwise/SplitwiseService.java) — split strategies, balance ledger, debt simplification
