@@ -1,5 +1,14 @@
 # Java Interview Practice
 
+## Interview Prep Docs
+- [Mercans Interview — Master Answer Book](Mercans_Interview_Master_Answer_Book.pdf)
+- [Spring & Spring Cloud — Interview Q&A](spring-interview-qa.pdf)
+- [Express.js — Revision Guide](Expressjs-Revision-Guide.pdf)
+- [MongoDB — Revision Guide](MongoDB-Revision-Guide.pdf)
+- [MongoDB Aggregation — Interview Revision Guide](MongoDB_Aggregation_Interview_Revision_Guide_COMPLETE.pdf)
+- [NestJS — Overview Guide](NestJS-Overview-Guide.pdf)
+- [Node.js Internals — Revision Guide](Nodejs-Internals-Revision-Guide.pdf)
+
 ## Design Patterns
 - [Strategy](src/strategypattern/StrategyPatternDemo.java) — swap payment method at runtime
 - [Factory](src/factorypattern/FactoryPatternDemo.java) — create shapes without `new` everywhere
@@ -32,15 +41,6 @@
 ## Low-Level Design: ![Rate Limiter](https://img.shields.io/badge/Rate%20Limiter-008080)
 - [Full implementation](src/ratelimiter/RateLimiter.java) — Factory + Strategy pattern, Token Bucket & Sliding Window Log
 - [Blueprint](src/ratelimiter/blueprint/RateLimiter.java)
-
-## Interview Prep Docs
-- [Mercans Interview — Master Answer Book](Mercans_Interview_Master_Answer_Book.pdf)
-- [Spring & Spring Cloud — Interview Q&A](spring-interview-qa.pdf)
-- [Express.js — Revision Guide](Expressjs-Revision-Guide.pdf)
-- [MongoDB — Revision Guide](MongoDB-Revision-Guide.pdf)
-- [MongoDB Aggregation — Interview Revision Guide](MongoDB_Aggregation_Interview_Revision_Guide_COMPLETE.pdf)
-- [NestJS — Overview Guide](NestJS-Overview-Guide.pdf)
-- [Node.js Internals — Revision Guide](Nodejs-Internals-Revision-Guide.pdf)
 
 ## Practice Problems
 - [TwoSum](src/TwoSum.java)
