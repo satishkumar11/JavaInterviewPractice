@@ -36,6 +36,11 @@
 ## Interview Prep Docs
 - [Mercans Interview — Master Answer Book](Mercans_Interview_Master_Answer_Book.pdf)
 - [Spring & Spring Cloud — Interview Q&A](spring-interview-qa.pdf)
+- [Express.js — Revision Guide](Expressjs-Revision-Guide.pdf)
+- [MongoDB — Revision Guide](MongoDB-Revision-Guide.pdf)
+- [MongoDB Aggregation — Interview Revision Guide](MongoDB_Aggregation_Interview_Revision_Guide_COMPLETE.pdf)
+- [NestJS — Overview Guide](NestJS-Overview-Guide.pdf)
+- [Node.js Internals — Revision Guide](Nodejs-Internals-Revision-Guide.pdf)
 
 ## Practice Problems
 - [TwoSum](src/TwoSum.java)
