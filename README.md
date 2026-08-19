@@ -19,6 +19,7 @@ A collection of design pattern demos, low-level design implementations, practice
 - [MongoDB Aggregation — Interview Revision Guide](MongoDB_Aggregation_Interview_Revision_Guide_COMPLETE.pdf)
 - [NestJS — Overview Guide](NestJS-Overview-Guide.pdf)
 - [Node.js Internals — Revision Guide](Nodejs-Internals-Revision-Guide.pdf)
+- [Java 8 Stream API — Interview Cheat Sheet](Java_8_Stream_API_Interview_Cheat_Sheet.pdf)
 
 ## Interview Questions ![Interview Questions](https://img.shields.io/badge/-Practice-orange?style=for-the-badge)
 
