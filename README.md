@@ -20,6 +20,7 @@ A collection of design pattern demos, low-level design implementations, practice
 - [NestJS — Overview Guide](NestJS-Overview-Guide.pdf)
 - [Node.js Internals — Revision Guide](Nodejs-Internals-Revision-Guide.pdf)
 - [Java 8 Stream API — Interview Cheat Sheet](Java_8_Stream_API_Interview_Cheat_Sheet.pdf)
+- [Java 8 Stream API — Interview Cheat Sheet (Final)](Java_8_Stream_API_Interview_Cheat_Sheet_Final.pdf)
 
 ## Interview Questions ![Interview Questions](https://img.shields.io/badge/-Practice-orange?style=for-the-badge)
 
