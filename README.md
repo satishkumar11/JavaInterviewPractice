@@ -8,6 +8,7 @@ A collection of design pattern demos, low-level design implementations, practice
 - [Interview Questions](#interview-questions)
 - [Design Patterns](#design-patterns)
 - [Low-Level Design](#low-level-design)
+- [Node.js API Design](#nodejs-api-design)
 - [Practice Problems](#practice-problems)
 
 ## Interview Prep Docs ![Interview Prep Docs](https://img.shields.io/badge/-Reference-blueviolet?style=for-the-badge)
@@ -62,6 +63,12 @@ A collection of design pattern demos, low-level design implementations, practice
 ### ![Rate Limiter](https://img.shields.io/badge/Rate%20Limiter-008080)
 - [Full implementation](src/ratelimiter/RateLimiter.java) — Factory + Strategy pattern, Token Bucket & Sliding Window Log
 - [Blueprint](src/ratelimiter/blueprint/RateLimiter.java)
+
+## Node.js API Design ![Node.js API Design](https://img.shields.io/badge/-Backend-339933?style=for-the-badge)
+
+### ![PAN Card KYC Service](https://img.shields.io/badge/PAN%20Card%20KYC%20Service-339933)
+- [Full implementation](nodejs-api-design/pan-card-kyc-service/) — Express API with JWT auth middleware: upload a PAN card image, check verification status, and add/update/delete reviewer messages
+- [API design README](nodejs-api-design/pan-card-kyc-service/README.md)
 
 ## Practice Problems ![Practice Problems](https://img.shields.io/badge/-Problems-DC143C?style=for-the-badge)
 
